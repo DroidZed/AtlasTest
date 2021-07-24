@@ -1,0 +1,5 @@
+# response message to use by the front end
+type ResponseMessage {
+    # the message itself :p
+    msg: String!
+}

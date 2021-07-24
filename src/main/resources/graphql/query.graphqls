@@ -1,0 +1,9 @@
+# The queries of our server
+type Query {
+
+    # get all users in the database
+    allUsers : [Users]
+
+    # get one user by id
+    getUserById(_id: String!) : Users
+}

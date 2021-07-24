@@ -1,8 +1,11 @@
 package me.droized.atlastest.messages;
 
+import lombok.Data;
+
+@Data
 public class ResponseMessage {
 
-    private final String msg;
+    private String msg;
 
     public ResponseMessage(String msg) {
         this.msg = msg;

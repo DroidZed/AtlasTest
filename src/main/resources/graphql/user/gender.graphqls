@@ -1,0 +1,8 @@
+# gender enum for abstraction
+# either MALE  or FEMALE
+enum Gender {
+    # male gender
+    MALE
+    # female gender
+    FEMALE
+}

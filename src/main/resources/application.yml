@@ -1,0 +1,40 @@
+server:
+  error:
+    include-message: always
+  servlet:
+    context-path: /
+  http2:
+    enabled: true
+
+spring:
+  data:
+    mongodb:
+      repositories:
+        type: auto
+      uri: mongodb+srv://${env.DB_USRNM}:${env.DB_PWD}@${env.DB_HOST}/${env.DB_NAME}?retryWrites=true&w=majority
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MongoDBDialect
+  profiles:
+    active: dev
+  application:
+    name: Atlas-Test-GraphQL
+
+graphql:
+  servlet:
+    # Sets if GraphQL servlet should be created and exposed. If not specified defaults to "true".
+    enabled: true
+    # Sets the path where GraphQL servlet will be exposed. If not specified defaults to "/graphql"
+    mapping: /graphql
+    cors-enabled: true
+    # if you want to @ExceptionHandler annotation for custom GraphQLErrors
+    exception-handlers-enabled: true
+    context-setting: PER_REQUEST_WITH_INSTRUMENTATION
+    # Sets if asynchronous operations are supported for GraphQL requests. If not specified defaults to true.
+    async-mode-enabled: true
+    max-query-depth: 20
+

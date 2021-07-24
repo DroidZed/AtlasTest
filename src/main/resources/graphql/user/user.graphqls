@@ -1,0 +1,13 @@
+# USER object
+type Users {
+    # id of the user
+    _id : String!
+    # full name of the user
+    fullName : String!
+    # age of the user
+    age : Int!
+    # gender of the user
+    gender : Gender!
+    # recent occupation of the user
+    occupation : String!
+}

@@ -1,0 +1,27 @@
+# Data transfer object used in update and creation of a user
+input UserDataDTO {
+    # full name of the user
+    fullName : String!
+    # age of the user
+    age : Int!
+    # gender of the user
+    gender : Gender!
+    # recent occupation of the user
+    occupation : String!
+}
+
+# mutations available
+type Mutation {
+
+    # create a user
+    createUser(data: UserDataDTO): Users
+
+    # update a user by id
+    updateUserById(_id: String!, newInfo:  UserDataDTO!) : Users
+
+    # delete a user by id
+    deleteUserById(_id: String!) : ResponseMessage!
+
+    # delete all users
+    deleteAllUsers : ResponseMessage!
+}

@@ -1,16 +1,13 @@
 package me.droized.atlastest.models;
 
-import lombok.*;
-import me.droized.atlastest.enums.Sex;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import me.droized.atlastest.enums.Gender;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Getter
-@Setter
-@EqualsAndHashCode
-@ToString
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
 @Document(collection = "users")
 public class Users {
@@ -27,6 +24,13 @@ public class Users {
     @Field(name = "occupation")
     private String occupation;
 
-    @Field(name = "sex")
-    private Sex sex;
+    @Field(name = "gender")
+    private Gender gender;
+
+    public Users(String fullName, Integer age, String occupation, Gender gender) {
+        this.fullName = fullName;
+        this.age = age;
+        this.occupation = occupation;
+        this.gender = gender;
+    }
 }
